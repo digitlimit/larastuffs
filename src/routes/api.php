@@ -1,6 +1,7 @@
 <?php
 
-Route::name('api.v1.')->prefix('v1')->middleware('api', 'throttle:60,1')->group(function()
+Route::name('api.v1.')->namespace('Digitlimit\Larastuffs\App\Http\Controllers')
+    ->prefix('v1')->middleware('api', 'throttle:60,1')->group(function()
 {
     //Auth API Routes
     Route::name('auth.')->prefix('auth')->namespace('Common')->group(function ()
@@ -33,28 +34,16 @@ Route::name('api.v1.')->prefix('v1')->middleware('api', 'throttle:60,1')->group(
     //Guest API Routes
     Route::name('guest.')->prefix('guest')->group(function ()
     {
-        Route::post('booking', 'Admin\BookingController@store')
-            ->name('booking.store');
-
-        Route::get('hotel/{hotel}', 'Admin\HotelController@show')
-            ->name('hotel.show');
-
-        Route::get('room', 'Admin\RoomController@index')
-            ->name('room.index');
-
-        Route::get('room/{room}', 'Admin\RoomController@show')
-            ->name('show.index');
+//        Route::get('room/{room}', 'Admin\RoomController@show')
+//            ->name('show.index');
     });
 
 
     //Guest API Routes
     Route::name('option.')->prefix('option')->namespace('Common')->group(function ()
     {
-        Route::get('countries', 'OptionController@countries')
-            ->name('countries');
-
-        Route::get('states', 'OptionController@states')
-            ->name('states');
+//        Route::get('countries', 'OptionController@countries')
+//            ->name('countries');
     });
 
 

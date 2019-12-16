@@ -34,5 +34,18 @@ class LarastuffsServiceProvider extends ServiceProvider
 
         //set view path
         $this->loadViewsFrom(__DIR__.'/resources/views', 'larastuffs');
+
+        $this->registerProviders();
+    }
+
+    /**
+     * Register routes for admin
+     */
+    protected function registerProviders()
+    {
+        if(head(\Request::segments()) == config('adminpanel.base_url', 'adminpanel'))
+        {
+            $this->app->register(\Digitlimit\Larastuffs\App\Providers\ObserverServiceProvider::class);
+        }
     }
 }
