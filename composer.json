@@ -13,6 +13,9 @@
     "autoload": {
         "psr-4": {
             "Digitlimit\\Larastuffs\\": "src/"
-        }
+        },
+        "files": [
+            "src/app/Http/helpers.php"
+        ]
     }
 }
