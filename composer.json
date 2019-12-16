@@ -1,7 +1,7 @@
 {
     "name": "digitlimit/larastuffs",
     "description": "Laravel Stuffs",
-    "type": "Laravel, Admin, Stuffs",
+    "type": "Laravel, Admin, Stuffs, CMS",
     "license": "MIT",
     "authors": [
         {
