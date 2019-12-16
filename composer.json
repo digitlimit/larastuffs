@@ -1,0 +1,18 @@
+{
+    "name": "digitlimit/larastuffs",
+    "description": "Laravel Stuffs",
+    "type": "Laravel, Admin, Stuffs",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mbah Emeka",
+            "email": "frankemeks77@yahoo.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Digitlimit\\Larastuffs\\": "src/"
+        }
+    }
+}
