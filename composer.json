@@ -15,7 +15,12 @@
             "Digitlimit\\Larastuffs\\": "src/"
         },
         "files": [
-            "src/app/Http/helpers.php"
+            "src/app/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "files": [
+            "src/app/helpers.php"
         ]
     }
 }

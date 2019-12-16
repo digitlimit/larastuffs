@@ -2,7 +2,7 @@
 
 namespace Digitlimit\Larastuffs\App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use Digitlimit\Larastuffs\App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {

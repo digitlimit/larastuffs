@@ -23,6 +23,9 @@ class LarastuffsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //TODO: fix autoload , files
+        require_once __DIR__.'/app/helpers.php';
+
         //load web routes
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
