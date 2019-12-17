@@ -1,11 +1,12 @@
 import Layout from "../componets/common/layouts/Default.vue"
 
-import IndexLanding from '../componets/landing/Index.vue';
-import AboutLanding from '../componets/landing/About.vue';
-import ContactLanding from '../componets/landing/Contact.vue';
+import IndexPost from '../componets/admin/post/Index.vue';
+import ShowPost from '../componets/admin/post/Show.vue';
+import EditPost from '../componets/admin/post/Edit.vue';
+import CreatePost from '../componets/admin/post/Create.vue';
 
 export default {
-    path: '/',
+    path: '/posts',
     name: 'home',
     component: Layout,
     meta:{
@@ -28,18 +29,13 @@ export default {
     children: [
         {
             path : '',
-            name: 'admin.landing.index',
-            component: IndexLanding
+            name: 'admin.post.index',
+            component: IndexPost
         },
         {
-            path : 'contact',
-            name: 'admin.landing.contact',
-            component: ContactLanding
-        },
-        {
-            path : 'about',
-            name: 'admin.landing.about',
-            component: AboutLanding
+            path : '/create',
+            name: 'admin.post.create',
+            component: CreatePost
         }
     ]
 }
