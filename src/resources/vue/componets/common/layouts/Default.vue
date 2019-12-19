@@ -1,5 +1,5 @@
 <template>
-    <div class="landing-common-layouts-default dashboard-main-wrapper">
+    <div class="common-layouts-default dashboard-main-wrapper">
 
         <HeaderPartial></HeaderPartial>
 

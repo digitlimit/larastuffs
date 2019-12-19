@@ -14,7 +14,7 @@
                         </li>
                         <li class="nav-item ">
                             <router-link class="nav-link active"
-                                         :to="{ name: 'admin.landing.index'}">
+                                         :to="{ name: 'admin.dashboard.index'}">
                                 <i class="fa fa-fw fa-user-circle"></i> Home
                             </router-link>
                         </li>

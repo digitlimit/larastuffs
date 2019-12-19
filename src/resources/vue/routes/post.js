@@ -7,25 +7,7 @@ import CreatePost from '../componets/admin/post/Create.vue';
 
 export default {
     path: '/posts',
-    name: 'home',
     component: Layout,
-    meta:{
-        auth: true,
-        nav: {
-            id: 'post',
-            title: 'Posts',
-            open: false,
-            icon: 'metismenu-icon pe-7s-diamond',
-            to: true,
-            items: [
-                {
-                    title: 'Posts',
-                    name: 'admin.post.index',
-                    path: '/admin/post'
-                }
-            ]
-        }
-    },
     children: [
         {
             path : '',
@@ -33,9 +15,19 @@ export default {
             component: IndexPost
         },
         {
-            path : '/create',
+            path : 'create',
             name: 'admin.post.create',
             component: CreatePost
+        },
+        {
+            path : 'edit/:id',
+            name: 'admin.post.edit',
+            component: EditPost
+        },
+        {
+            path : 'show/:id',
+            name: 'admin.post.show',
+            component: ShowPost
         }
     ]
 }

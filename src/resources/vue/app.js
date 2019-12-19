@@ -1,6 +1,8 @@
 import Vue from "vue"
 window.Vue = Vue;
 
+//import '../../../../../../public/vendors/digitlimit/larastuffs/assets/css/shared.css'
+
 import './routes'
 window.router = router;
 
