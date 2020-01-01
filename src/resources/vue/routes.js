@@ -4,23 +4,23 @@ import VueRouter from "vue-router"
 //routes
 import dashboard from "./routes/dashboard"
 import post from "./routes/post"
+import error from "./routes/error"
 
 //import routes
 const baseRoutes = [];
 const routes = baseRoutes.concat(
     dashboard,
-    post
+    post,
+    error
 );
 
 routes.push({
     path: '*',
     name: 'catch.all',
     beforeEnter: function(to, from, next){
-        //alert('404')
-        //console.
+        console.log(to)
         //this.$router.push({name: 'error.404'});
-
-        //next('/error/404')
+        next('/error/404')
     }
 });
 

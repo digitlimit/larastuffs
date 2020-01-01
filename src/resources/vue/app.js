@@ -1,23 +1,31 @@
 import Vue from "vue"
 window.Vue = Vue;
 
-//import '../../../../../../public/vendors/digitlimit/larastuffs/assets/css/shared.css'
+import router from './routes'
+import store from './store/index'
 
-import './routes'
+window.dd = (data) => console.log(data)
+
 window.router = router;
 
-////components
 import App from "./App.vue"
+import { mapState, mapGetters, mapActions } from 'vuex'
 
 window.app = new Vue({
     el: '#app',
     router: router,
+    store: store,
     data: function(){
         return {
             name: 'Larastuffs'
         }
     },
-    mounted: function(){
+    computed: {
+        ...mapState([
+            'posts'
+        ])
+    },
+    mounted(){
 
     },
     render: function(h){
