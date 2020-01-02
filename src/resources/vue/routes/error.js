@@ -1,6 +1,6 @@
-import Layout from "../componets/common/layouts/Error.vue"
+import Layout from "../components/common/layouts/Error.vue"
 
-import Error404 from '../componets/error/404.vue';
+import Error404 from '../components/error/404.vue';
 
 export default {
     path: '/error',

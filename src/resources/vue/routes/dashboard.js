@@ -1,6 +1,6 @@
-import Layout from "../componets/common/layouts/Default.vue"
+import Layout from "../components/common/layouts/Default.vue"
 
-import Dashboard from '../componets/admin/dashboard/Index.vue';
+import Dashboard from '../components/admin/dashboard/Index.vue';
 
 export default {
     path: '/',

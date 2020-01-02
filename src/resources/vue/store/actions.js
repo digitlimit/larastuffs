@@ -75,7 +75,9 @@ axios.handleError = ({commit}, error) => {
 export default {
     //posts
     //------------------------------------------------------------------------------------------
-    indexPost({commit}, {url, limit}){
+    indexPost({commit}, {url, limit})
+    {
+        alert(url)
         //alert(url);
         //alert(limit);
         //
@@ -109,7 +111,7 @@ export default {
 
     },
     storePost({commit}, {post}) {
-
+        console.log(post)
     },
     destroyPost({commit}, {id}) {
 

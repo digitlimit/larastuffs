@@ -6,6 +6,10 @@ export default {
     setSuccess             : (state, success) => { state.success = success },
     setUser                : (state, user) => { state.user = user },
     setAuthenticated       : (state, status) => { state.authenticated = status },
+    setMeta               : (state, meta) => {
+        state.meta              = {...state.meta, ...meta}; //merge
+        document.title          = meta.page.title;
+    },
 
     addPost                : (state, post) => { state.posts.push(post) },
 

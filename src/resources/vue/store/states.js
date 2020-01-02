@@ -4,7 +4,6 @@ export default {
     loading: false,
     error: null,
     validation_errors: {},
-
-    user: {},
-    posts: []
+    meta:{},
+    user: {}
 }

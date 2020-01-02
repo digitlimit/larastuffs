@@ -1,28 +1,22 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
+import {mapState, mapGetters, mapActions} from "vuex"
+import store from './store/index'
 
 //routes
 import dashboard from "./routes/dashboard"
 import post from "./routes/post"
 import error from "./routes/error"
+import catch_all from "./routes/catch_all"
 
 //import routes
 const baseRoutes = [];
 const routes = baseRoutes.concat(
     dashboard,
     post,
-    error
+    error,
+    catch_all
 );
-
-routes.push({
-    path: '*',
-    name: 'catch.all',
-    beforeEnter: function(to, from, next){
-        console.log(to)
-        //this.$router.push({name: 'error.404'});
-        next('/error/404')
-    }
-});
 
 //use plugins
 Vue.use(VueRouter);
@@ -30,19 +24,26 @@ Vue.use(VueRouter);
 //define routes
 window.router = new VueRouter({
     routes: routes,
-    //mode: 'history'
-    //base: process.env.BASE_URL
+    mode: 'history',
+    base: document.head.querySelector('meta[name="base-path"]').content
 });
 
-//router.beforeEach((to, from, next) => {
-//
-//    //set page title:
-//    //document.title = to.meta.title;
-//    //console.log(to.meta)
-//
-//    // get login token from the localStorage
-//    const token = localStorage.getItem('token');
-//
+router.beforeEach((to, from, next) => {
+
+    // const states = {
+    //     ...mapState(['page'])
+    // };
+    // console.log(states);
+    // console.log(to);
+
+    //set meta
+    if(typeof to.meta != 'undefined'){
+        store.commit('setMeta', to.meta);
+    }
+
+   // get login token from the localStorage
+   const token = localStorage.getItem('token');
+
 //    if (to.matched.some(m => m.meta.auth) && !token) {
 //        alert('login')
 //        //if going to auth route and token is empty
@@ -56,7 +57,9 @@ window.router = new VueRouter({
 //    } else {
 //        next()
 //    }
-//});
+
+    next()
+});
 
 //export router
 export default router;
