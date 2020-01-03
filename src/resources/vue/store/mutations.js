@@ -8,7 +8,11 @@ export default {
     setAuthenticated       : (state, status) => { state.authenticated = status },
     setMeta               : (state, meta) => {
         state.meta              = {...state.meta, ...meta}; //merge
-        document.title          = meta.page.title;
+
+        if(meta.page && meta.page.title){
+            document.title       = meta.page.title;
+        }
+
     },
 
     addPost                : (state, post) => { state.posts.push(post) },

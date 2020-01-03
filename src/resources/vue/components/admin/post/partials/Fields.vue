@@ -48,10 +48,10 @@
                 console.log('editor focus!', quill)
             },
             onEditorReady(quill) {
-                console.log('editor ready!', quill)
+                // console.log('editor ready!', quill)
             },
             onEditorChange({ quill, html, text }) {
-                console.log('editor change!', quill, html, text)
+                // console.log('editor change!', quill, html, text)
                 this.content = html
             }
         },
@@ -61,7 +61,7 @@
             }
         },
         mounted() {
-            console.log('this is current quill instance object', this.editor)
+            // console.log('this is current quill instance object', this.editor)
         }
     }
 </script>

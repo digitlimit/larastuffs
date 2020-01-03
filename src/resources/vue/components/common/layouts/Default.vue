@@ -19,25 +19,25 @@
                                 </h2>
 
                                 <div class="page-breadcrumb">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
-                                            <li v-for="(bread, index) in meta.breadcrumb"
+<!--                                    <nav aria-label="breadcrumb">-->
+<!--                                        <ol class="breadcrumb">-->
+<!--                                            <li v-for="(bread, index) in meta.breadcrumb"-->
 
-                                                :class="[index+1 == meta.breadcrumb.length ?
-                                                'breadcrumb-item active' : 'breadcrumb-item']">
+<!--                                                :class="[index+1 == meta.breadcrumb.length ?-->
+<!--                                                'breadcrumb-item active' : 'breadcrumb-item']">-->
 
-                                                <router-link v-if="index+1 != meta.breadcrumb.length"
-                                                   class="breadcrumb-link"
-                                                :to="{ name: bread.route }">
-                                                    {{bread.label}}
-                                                </router-link>
+<!--                                                <router-link v-if="index+1 != meta.breadcrumb.length"-->
+<!--                                                   class="breadcrumb-link"-->
+<!--                                                :to="{ name: bread.route }">-->
+<!--                                                    {{bread.label}}-->
+<!--                                                </router-link>-->
 
-                                                {{index+1 == meta.breadcrumb.length ? bread.label : ''}}
+<!--                                                {{index+1 == meta.breadcrumb.length ? bread.label : ''}}-->
 
 
-                                            </li>
-                                        </ol>
-                                    </nav>
+<!--                                            </li>-->
+<!--                                        </ol>-->
+<!--                                    </nav>-->
                                 </div>
 
                             </div>
@@ -74,7 +74,7 @@
         },
         actions:{},
         mounted() {
-dd(this.$router);
+// dd(this.$router);
         }
     }
 </script>

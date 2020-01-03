@@ -95,7 +95,7 @@
             let routes = this.$router.options.routes;
             let savedRoutes = this.getNavRoutes();
 
-            console.log(routes)
+            // console.log(routes)
 
             // if(savedRoutes && savedRoutes.length){
             //     this.routes = savedRoutes;

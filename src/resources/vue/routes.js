@@ -34,10 +34,36 @@ router.beforeEach((to, from, next) => {
     //     ...mapState(['page'])
     // };
     // console.log(states);
-    // console.log(to);
+    // console.log(to.matched[0].meta);
 
     //set meta
     if(typeof to.meta != 'undefined'){
+
+        //we store breadcrumbs here
+        let breadcrumbs = [];
+
+        //we are collating all breadcrumb in parent route
+        if(to.matched.length > 1 && to.matched[0].meta && to.matched[0].meta.breadcrumb){
+            for(var i=0; i < to.matched[0].meta.breadcrumb.length; i++) {
+                breadcrumbs.push(to.matched[0].meta.breadcrumb[i]);
+            }
+
+            // console.log(to.matched[0].meta.breadcrumb[i]);
+        }
+
+        //we are collating all breadcrumb in current route
+        if(to.meta && to.meta.breadcrumb){
+            for(var i=0; i < to.meta.breadcrumb.length; i++) {
+                breadcrumbs.push(to.meta.breadcrumb[i]);
+            }
+            // console.log(to.meta.breadcrumb[i])
+        }
+
+        //we re-assign to current route breadcrumb, what we achieved is having parent
+        //breadcrumb first before child breadcrumb example Posts > Create
+        to.meta.breadcrumb = {...breadcrumbs};
+
+        //commit to store
         store.commit('setMeta', to.meta);
     }
 
