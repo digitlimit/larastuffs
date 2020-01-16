@@ -6,9 +6,29 @@
                   <!--data-path=""-->
                   <!--pagination-path=""-->
         <!--&gt;</vuetable>-->
+        <video-chat></video-chat>
     </div>
 </template>
 
 <script>
-    export { default } from '@controllers/post/IndexController'
+    import Vuetable from 'vuetable-2'
+    import {mapState, mapGetters, mapActions} from 'vuex'
+    import VideoChat from '@vendor/video/components/Video.vue'
+
+    export default {
+        data: function(){
+            return {}
+        },
+        components:{
+            Vuetable,
+            VideoChat
+        },
+        mounted(){
+
+            // this.indexPost({url:'http://emeka.com', limit:30})
+        },
+        methods:{
+            ...mapActions(['indexPost'])
+        }
+    }
 </script>

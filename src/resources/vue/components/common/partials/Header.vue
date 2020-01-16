@@ -1,7 +1,7 @@
 <template>
     <div class="dashboard-header">
         <nav class="navbar navbar-expand-lg bg-white fixed-top">
-            <a class="navbar-brand" href="">Larastuffs</a>
+            <a class="navbar-brand" href="">{{site_name}}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -46,3 +46,19 @@
         </nav>
     </div>
 </template>
+
+<script>
+    export default {
+        props:{
+          site_name:{
+              type: String,
+              default: 'Larastuffs',
+              // required: true
+          }
+        },
+        data(){
+            return {
+            }
+        }
+    }
+</script>

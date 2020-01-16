@@ -1,12 +1,14 @@
 import Vuetable from 'vuetable-2'
 import {mapState, mapGetters, mapActions} from 'vuex'
+import Video from '@vendor/video/components/Video.vue'
 
 export default {
     data: function(){
         return {}
     },
     components:{
-        Vuetable
+        Vuetable,
+        Video
     },
     mounted(){
 

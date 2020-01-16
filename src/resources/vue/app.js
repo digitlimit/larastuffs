@@ -6,8 +6,6 @@ import store from './store/index'
 
 window.dd = (data) => console.log(data)
 
-window.router = router;
-
 import App from "./App.vue"
 import { mapState, mapGetters, mapActions } from 'vuex'
 

@@ -66,7 +66,8 @@
         },
         data(){
             return {
-                active_breadcrumb: 'breadcrumb-link'
+                active_breadcrumb: 'breadcrumb-link',
+                // page_title: 'hahaha'
             }
         },
         computed:{
