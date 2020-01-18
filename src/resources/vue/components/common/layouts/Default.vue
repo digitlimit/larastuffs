@@ -1,9 +1,9 @@
 <template>
     <div class="common-layouts-default dashboard-main-wrapper">
 
-        <HeaderPartial></HeaderPartial>
+        <header-partial></header-partial>
 
-        <SidebarPartial></SidebarPartial>
+        <sidebar-partial></sidebar-partial>
 
         <div class="dashboard-wrapper">
 
@@ -13,32 +13,9 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
 
-                                <h2 class="pageheader-title">
-                                    <i :class="meta.icon"></i>
-                                    {{meta.page.title}}
-                                </h2>
+                                <page-title-partial></page-title-partial>
 
-                                <div class="page-breadcrumb">
-<!--                                    <nav aria-label="breadcrumb">-->
-<!--                                        <ol class="breadcrumb">-->
-<!--                                            <li v-for="(bread, index) in meta.breadcrumb"-->
-
-<!--                                                :class="[index+1 == meta.breadcrumb.length ?-->
-<!--                                                'breadcrumb-item active' : 'breadcrumb-item']">-->
-
-<!--                                                <router-link v-if="index+1 != meta.breadcrumb.length"-->
-<!--                                                   class="breadcrumb-link"-->
-<!--                                                :to="{ name: bread.route }">-->
-<!--                                                    {{bread.label}}-->
-<!--                                                </router-link>-->
-
-<!--                                                {{index+1 == meta.breadcrumb.length ? bread.label : ''}}-->
-
-
-<!--                                            </li>-->
-<!--                                        </ol>-->
-<!--                                    </nav>-->
-                                </div>
+                                <breadcrumb-partial></breadcrumb-partial>
 
                             </div>
                         </div>
@@ -49,7 +26,7 @@
                 </div>
             </div>
 
-            <FooterPartial></FooterPartial>
+            <footer-partial></footer-partial>
         </div>
     </div>
 </template>
@@ -57,12 +34,17 @@
     import HeaderPartial from '../partials/Header.vue';
     import SidebarPartial from '../partials/Sidebar.vue';
     import FooterPartial from '../partials/Footer.vue';
+    import BreadcrumbPartial from "../partials/Breadcrumb";
+    import PageTitlePartial from "../partials/PageTitle";
+
     import {mapState} from 'vuex';
+
+
 
     export default {
         name: 'CommonLayoutsDefault',
         components: {
-            HeaderPartial, SidebarPartial, FooterPartial
+            HeaderPartial, SidebarPartial, FooterPartial, BreadcrumbPartial, PageTitlePartial
         },
         data(){
             return {
